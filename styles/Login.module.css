@@ -1,0 +1,31 @@
+.loginPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.birdBackground {
+    background-image: url('../public/login.png');
+    background-size: cover;
+    width: 50vw;
+    height: 100vh;
+    transform: rotate(90deg);
+}
+
+.darkBackground {
+    background-color: #151d27;
+}
+
+.logo {
+    transform: rotate(90deg);
+}
+
+.titleH1 {
+    color: white;
+    width: 50vw;
+    margin-left: 10px;
+}
+
+.titleH3 {
+    color: white;
+    margin-left: 10px;
+}

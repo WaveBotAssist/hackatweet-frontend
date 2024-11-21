@@ -1,0 +1,33 @@
+.signUpContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    color: white;
+    margin-left: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 150px;
+}
+
+.input {
+    background-color: #151d27;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+    margin-left: 10px;
+    color: white;
+}
+
+.button {
+    background-color: white;
+    margin-left: 10px;
+    border-radius: 10px;
+}
