@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@reduxjs/toolkit": "^2.3.0",
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1"
+  }
+}
