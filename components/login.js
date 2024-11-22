@@ -2,8 +2,25 @@ import styles from '../styles/Login.module.css';
 import Image from 'next/image';
 import SignUp from './Signup';
 import SignIn from './Signin';
+// import { Modal } from 'antd';
 
 function Login() {
+
+    // const [isModalVisible, setIsModalVisible] = useState(false);
+
+    // const showModal = () => {
+	// 	setIsModalVisible(!isModalVisible);
+	// };
+
+    // let signUpModalContent;
+    // signUpModalContent = (
+    //     <SignUp/>
+    // )
+
+    // let signInModalContent;
+    // signInModalContent = (
+    //     <SignIn/>
+    // )
 
     return (
     <div>

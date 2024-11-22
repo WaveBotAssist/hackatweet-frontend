@@ -1,17 +1,36 @@
 import styles from '../styles/SignUp.module.css';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
+import { login } from '../reducers/user';
+import Link from 'next/link';
 
 function SignUp() {
+    const dispatch = useDispatch();
+    const router = useRouter();
+
     const [signUpFirstname, setSignUpFirstname] = useState('');
     const [signUpUsername, setSignUpUsername] = useState('');
     const [signUpPassword, setSignUpPassword] = useState('');
 
 
     const registerUser = () => {
-        fetch('http://localhost:3000/users/signup')
-        .then(response => response.json)
+        fetch('http://localhost:3000/users/signup', {
+            method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ firstname: signUpFirstname, username: signUpUsername, password: signUpPassword,  }),
+        })
+        .then(response => response.json())
         .then(data => {
             console.log(data)
+            if (data.result) {
+                dispatch(login({firstname: signUpFirstname, username: signUpUsername, image: data.image, token: data.token}));
+                setSignUpUsername('');
+                setSignUpFirstname('');
+                router.push('/home');
+            } else {
+                alert(data.error)
+            }
         })
     }
 
