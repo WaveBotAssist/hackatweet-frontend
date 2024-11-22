@@ -35,7 +35,6 @@ function SignIn() {
         <div className={styles.signUpContainer}>
             <h3 className={styles.text}>Connect to Hackatweet</h3>
             <div className={styles.inputContainer}>
-                
                 <input type='text' placeholder='Username'className={styles.input} onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername}></input>
                 <input type='text' placeholder='Password' className={styles.input} onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword}></input>
                 <button className={styles.button} onClick={() => connectUser()}>SignIn</button>
