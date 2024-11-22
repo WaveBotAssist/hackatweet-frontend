@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { login } from '../reducers/user';
-import Link from 'next/link';
 
 function SignUp() {
     const dispatch = useDispatch();

@@ -26,15 +26,55 @@
     transform: rotate(90deg);
 }
 
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    width: 50%;
+}
+
 .titleH1 {
     color: white;
-    width: 50vw;
-    margin-left: 10px;
+    margin-left: 20px;
     font-family: 'Mont Heavy';
+    font-size: 4em;
 }
 
 .titleH3 {
     color: white;
-    margin-left: 10px;
+    margin-left: 20px;
     font-family: 'Mont Heavy';
+    font-size: 2em;
+}
+
+.titleH4 {
+    color: white;
+    margin-left: 20px;
+    font-family: 'Mont Heavy';
+    margin-top: 50px;
+}
+
+.signup {
+    background-color: #2d78c6;
+    color: white;
+    margin-left: 20px;
+    width: 300px;
+    height: 50px;
+    border: none; 
+    border-radius: 20px;
+}
+
+.signin {
+    background-color: #151d27;
+    color: #2d78c6;
+    margin-left: 20px;
+    width: 300px;
+    height: 50px;
+    border: 1px solid #35404c;
+    border-radius: 20px;
+}
+
+.modal-content {
+    background-color: #151d27;
 }
