@@ -1,24 +1,36 @@
-import React from 'react';
+const express = require('express');
+const router = express.Router();
+const Tweet = require('../models/tweets'); // Assurez-vous que le chemin est correct
+const { checkBody } = require('../modules/checkBody'); // Assurez-vous que le chemin est correct
 
-const Tweet = ({ tweet, onLike, onDelete }) => {
-  const handleLike = () => {
-    onLike(tweet.id);
-  };
+// Route pour ajouter un tweet
+router.post('/add', (req, res) => {
+  if (!checkBody(req.body, ['tweet'])) {
+    res.json({ result: false, error: 'Missing or empty fields' });
+    return;
+  }
 
-  const handleDelete = () => {
-    onDelete(tweet.id);
-  };
+  const newTweet = new Tweet({
+    timestamp: new Date(),
+    tweet: req.body.tweet, // Contenu du tweet depuis le corps de la requête
+    likes: 0,
+    likedBy: []
+  });
 
-  return (
-    <div className="tweet">
-      <p>{tweet.content}</p>
-      <p>— {tweet.author}</p>
-      <div>
-        <button onClick={handleLike}>Like {tweet.likes}</button>
-        {tweet.isAuthor && <button onClick={handleDelete}>Delete</button>}
-      </div>
-    </div>
-  );
-};
+  newTweet.save().then(newDoc => {
+    res.json({ result: true, tweet: newDoc });
+  }).catch(error => {
+    res.json({ result: false, error: error.message });
+  });
+});
 
-export default Tweet;
+// Route pour récupérer tous les tweets
+router.get('/all', (req, res) => {
+  Tweet.find().then(tweets => {
+    res.json({ result: true, tweets });
+  }).catch(error => {
+    res.json({ result: false, error: error.message });
+  });
+});
+
+module.exports = router;
