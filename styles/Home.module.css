@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #151d27;
+    width: 100vh;
+}
+
+.title{
+    color:white;
+}
+
+.btn_tweets{
+    color: white;
+    background-color: rgb(16, 16, 197);
+    border-radius: 15px;
+    font-weight: 5px;
+}
