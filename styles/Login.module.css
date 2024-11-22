@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Mont Heavy';
+    src: url('../public/fonts/mont-heavy.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
 .loginPage {
     display: flex;
     flex-direction: row;
@@ -6,13 +13,13 @@
 .birdBackground {
     background-image: url('../public/login.png');
     background-size: cover;
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
-    transform: rotate(90deg);
 }
 
 .darkBackground {
     background-color: #151d27;
+    width: 60vw;
 }
 
 .logo {
@@ -23,9 +30,11 @@
     color: white;
     width: 50vw;
     margin-left: 10px;
+    font-family: 'Mont Heavy';
 }
 
 .titleH3 {
     color: white;
     margin-left: 10px;
+    font-family: 'Mont Heavy';
 }
